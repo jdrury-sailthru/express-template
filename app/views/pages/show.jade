@@ -1,0 +1,14 @@
+extends ../layouts/home
+
+block heading
+  #page-control-panel
+    a.btn.btn-danger(href='/delete/#{page.id}') DELETE
+    &nbsp;
+    a.btn.btn-warning(href='/edit/#{page.id}') EDIT
+
+  h2= page.title
+
+br
+
+block content
+  div!= md(page.body)

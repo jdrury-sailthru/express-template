@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block navbar
+      #wrap
+        .navbar.navbar-fixed-top.navbar-inverse(role='navigation')
+          .container
+            .navbar-header
+              button.navbar-toggle(type='button' data-toggle='collapse' data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a(href='/').navbar-brand Jadestack
+            .collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li: a(href='/add') Add Page
+                li: a(href='/about') About
+
+    .col-md-8.col-md-offset-2
+      .row
+        .page-header
+          block heading
+            .h2= title
+
+      .row
+          block content
+            h1 Welcome to #{title}
+
+      .row
+        block footer
+          .navbar.navbar-fixed-bottom.h6
+            .col-md-8.col-md-offset-2
+              hr
+              #footie Powered by Fullstack Academy &#9829 2014

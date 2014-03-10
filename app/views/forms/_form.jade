@@ -1,0 +1,14 @@
+.col-md-6
+  form(action=( page ? '/submit_edit/'+page.id : '/submit_new' ) method='post')
+    .form-group
+      br
+      h4 Page Title
+      input.form-control(type='text', name='title' value=( page ? '#{page.title}' : '' ))
+      br
+      br
+      h4 Page Content
+      textarea.form-control(name='body', rows='20')
+        if page
+          != page.body
+    .form-group
+      input.btn.btn-success(type='submit')
